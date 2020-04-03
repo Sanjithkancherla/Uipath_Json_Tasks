@@ -124,7 +124,7 @@
       </ui:ForEach>
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="308,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Answer: &quot;+Str_to_json_object(&quot;quiz&quot;)(&quot;maths&quot;)(&quot;q1&quot;)(&quot;answer&quot;).ToString]" />
     </Sequence>
-    <Sequence DisplayName="Extract_maths_Question2_And_Answer" sap:VirtualizedContainerService.HintSize="350,682" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Extract_maths_Question2_And_Answer" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
