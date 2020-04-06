@@ -63,7 +63,7 @@
         <OutArgument x:TypeArguments="x:String">[Inputfile_path]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Input\009_Input_Filter_Jsondata.json"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Input\009_Input_Filter_Jsondata(linq method).json"]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ReadTextFile Content="[jsonstring]" DisplayName="Read Text File" FileName="[Inputfile_path]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
