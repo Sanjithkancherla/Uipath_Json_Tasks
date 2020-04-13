@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -346,9 +346,9 @@
                     <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException IsNot Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_8" />
                   </Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Init state" sap:VirtualizedContainerService.HintSize="610,2324" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Init state" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
-                        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="564,1906" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="751,2963" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -356,14 +356,23 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <TryCatch.Try>
-                            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="526,1679" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="713,2736" sap2010:WorkflowViewState.IdRef="Sequence_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:DateTime">[StartTime]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:DateTime">[datetime.Now]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="671,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Execution Startedtime: &quot;+StartTime.ToString]" />
+                              <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
                                 </Assign.To>
@@ -371,7 +380,7 @@
                                   <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="484,245" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="671,1071" sap2010:WorkflowViewState.IdRef="If_1">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -709,11 +718,15 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,119" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="652,1439" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="434,541" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="606,1295" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <TryCatch.Try>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="568,604" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="568,1068" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="s:DateTime" Name="EndTime" />
+                                        <Variable x:TypeArguments="x:TimeSpan" Name="Duration" />
+                                      </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -737,18 +750,36 @@
                                           </If.Then>
                                         </If>
                                       </Sequence>
-                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="526,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="014_In_Framework\CloseAllApplications.xaml">
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="526,89" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="014_In_Framework\CloseAllApplications.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
+                                      <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="s:DateTime">[EndTime]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="s:DateTime">[datetime.Now]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Execution ended time: &quot; +EndTime.ToString]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:TimeSpan">[Duration]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:TimeSpan">[EndTime-StartTime]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Process Duration:  &quot;+Duration.ToString]" />
                                     </Sequence>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,379" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -763,7 +794,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <ui:LogMessage DisplayName="Log message (Failed to close applications)" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Warn" Message="[&quot;Applications failed to close gracefully. &quot;+Exception.Message+&quot; at Source: &quot;+Exception.Source]" />
-                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow (End process)" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="014_In_Framework\KillAllProcesses.xaml">
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow (End process)" sap:VirtualizedContainerService.HintSize="334,89" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="014_In_Framework\KillAllProcesses.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                             </ui:InvokeWorkflowFile.Arguments>
@@ -880,6 +911,7 @@
       <Variable x:TypeArguments="scg:ICollection(x:Object)" Name="PlantIDs" />
       <Variable x:TypeArguments="scg:ICollection(x:Object)" Name="Users_Details" />
       <Variable x:TypeArguments="sd:DataTable" Name="MRPController" />
+      <Variable x:TypeArguments="s:DateTime" Name="StartTime" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
