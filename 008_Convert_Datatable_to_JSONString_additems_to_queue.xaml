@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Convert_Datarow_to_JSONString" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,630" sap2010:WorkflowViewState.IdRef="Convert_Datarow_to_JSONString_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:nj="clr-namespace:Newtonsoft.Json;assembly=Newtonsoft.Json" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Convert_Datarow_to_JSONString" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,1323" sap2010:WorkflowViewState.IdRef="Convert_Datarow_to_JSONString_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:nj="clr-namespace:Newtonsoft.Json;assembly=Newtonsoft.Json" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -54,7 +54,7 @@
       <AssemblyReference>RestSharp</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Convert_Datarow_to_JSONString" sap:VirtualizedContainerService.HintSize="376,570" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Convert_Datarow_to_JSONString" sap:VirtualizedContainerService.HintSize="376,1263" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Input_filepath" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_out_data" />
@@ -62,18 +62,30 @@
       <Variable x:TypeArguments="x:String" Name="jsonString" />
       <Variable x:TypeArguments="njl:JArray" Name="jsonobject" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Dict" />
+      <Variable x:TypeArguments="s:DateTime" Name="StartTime" />
+      <Variable x:TypeArguments="s:DateTime" Name="EndTime" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="Duration" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:DateTime">[StartTime]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:DateTime">[datetime.Now]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Execution Startedtime: &quot;+StartTime.ToString]" />
     <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Input_filepath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Input\008_Input_Convert_datatablerow_to_jsonstring.xlsx"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Input\008_Input_Convert_datatable_to_jsonstring.xlsx"]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_out_data]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[Input_filepath]" />
@@ -144,5 +156,23 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:DateTime">[EndTime]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:DateTime">[datetime.Now]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended time: &quot; +EndTime.ToString]" />
+    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:TimeSpan">[Duration]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:TimeSpan">[EndTime-StartTime]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Process Duration:  &quot;+Duration.ToString]" />
   </Sequence>
 </Activity>
