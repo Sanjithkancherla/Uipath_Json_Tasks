@@ -44,7 +44,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_015" sap:VirtualizedContainerService.HintSize="376,1137" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="015" sap:VirtualizedContainerService.HintSize="376,1137" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="Inputfile_path" />
@@ -71,7 +71,7 @@
         <OutArgument x:TypeArguments="x:String">[Inputfile_path]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Input\015_Input_BookPublication_XML_file.xml"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Input\015_Input_BookPublication_XML_file_to_Jsondata.xml"]</InArgument>
       </Assign.Value>
     </Assign>
     <uj:ConvertXMLToJSON DisplayName="Convert XML to JSON" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ConvertXMLToJSON_1" InputFilePath="[Inputfile_path]" OutputJSON="[outjson]" />
