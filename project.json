@@ -8,7 +8,8 @@
     "UiPath.Mail.Activities": "[1.7.2]",
     "UiPath.System.Activities": "[19.10.1]",
     "UiPath.UIAutomation.Activities": "[19.11.1]",
-    "UiPath.WebAPI.Activities": "[1.4.4]"
+    "UiPath.WebAPI.Activities": "[1.4.4]",
+    "UiPathTeam.JSONUtilities.Activities": "[0.5.5]"
   },
   "webServices": [],
   "schemaVersion": "4.0",
