@@ -9,6 +9,7 @@
     "UiPath.System.Activities": "[19.10.1]",
     "UiPath.UIAutomation.Activities": "[19.11.1]",
     "UiPath.WebAPI.Activities": "[1.3.0]",
+    "UiPathTeam.JsonToCsvConverter.Activities": "[1.1.0]",
     "UiPathTeam.XmlDataConverter.Activities": "[1.0.1]"
   },
   "webServices": [],
