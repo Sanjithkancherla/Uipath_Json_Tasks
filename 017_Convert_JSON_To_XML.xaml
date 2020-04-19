@@ -45,6 +45,8 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="017_Convert_JSON_To_XML" sap:VirtualizedContainerService.HintSize="376,1007" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -83,7 +85,7 @@
         <OutArgument x:TypeArguments="x:String">[Output_XMLpath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Output\017_JSON_To_XML.xml</InArgument>
+        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Output\017_Out_JSON_To_XML.xml"]</InArgument>
       </Assign.Value>
     </Assign>
     <j:JsonToXml InputJsonString="{x:Null}" DisplayName="Json to xml" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="JsonToXml_1" InputJsonFilePath="[Input_JSONpath]" OutputXMLFilePath="[Output_XMLpath]" />
