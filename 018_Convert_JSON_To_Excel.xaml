@@ -27,7 +27,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -45,13 +45,15 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="018_Convert_Json_To_Excel" sap:VirtualizedContainerService.HintSize="376,1162" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="Input_JSONpath" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="Output_Excelpath" />
+      <Variable x:TypeArguments="x:String" Name="Output_Excelpath" />
       <Variable x:TypeArguments="sd:DataTable" Name="Out_ExcelData" />
       <Variable x:TypeArguments="s:DateTime" Name="EndTime" />
       <Variable x:TypeArguments="x:TimeSpan" Name="Duration" />
@@ -80,10 +82,10 @@
     </Assign>
     <Assign DisplayName="Assign(Output ExcelPath)" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
-        <OutArgument x:TypeArguments="ui:GenericValue">[Output_Excelpath]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[Output_Excelpath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="ui:GenericValue">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Output\018_JSON_To_EXCEL.xlsx"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["C:\Users\rathina.krithika\Desktop\Uipath Repo\JSON_Snippets_Tasks\Output\018_Out_JSON_To_EXCEL.xlsx"]</InArgument>
       </Assign.Value>
     </Assign>
     <j:JsonToDataTable InputJsonString="{x:Null}" DisplayName="Json to data table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="JsonToDataTable_1" InputJsonFilePath="[Input_JSONpath]" OutputDataTable="[Out_ExcelData]" />
