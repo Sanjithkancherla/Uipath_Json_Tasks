@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_009_Filter_Jsondata" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,1710" sap2010:WorkflowViewState.IdRef="_009_Filter_Jsondata_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_009_Filter_Jsondata" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,1750" sap2010:WorkflowViewState.IdRef="_009_Filter_Jsondata_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -27,7 +27,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -45,6 +45,8 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="_009_Filter_Jsondata" sap:VirtualizedContainerService.HintSize="376,1650" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -80,7 +82,7 @@
     </Assign>
     <ui:ReadTextFile Content="[jsonstring]" DisplayName="Read Text File" FileName="[Inputfile_path]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
     <ui:DeserializeJsonArray DisplayName="Deserialize json array" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[Jsondata]" JsonString="[jsonstring]" />
-    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For each LINQ version" sap:VirtualizedContainerService.HintSize="334,493" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Jsondata.Where( _&#xA;Function(x As JToken)  _&#xA; x(&quot;age&quot;).Value(Of Integer) &gt; 30 _&#xA; AndAlso x(&quot;phoneNumber&quot;).Any( _&#xA; Function(y As JToken) _&#xA;  y(&quot;type&quot;).Value(Of String).Equals(&quot;mobile&quot;)))]">
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For each LINQ version" sap:VirtualizedContainerService.HintSize="334,493" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Jsondata.Where( _&#xD;&#xA;Function(x As JToken)  _&#xD;&#xA; x(&quot;age&quot;).Value(Of Integer) &gt; 30 _&#xD;&#xA; AndAlso x(&quot;phoneNumber&quot;).Any( _&#xD;&#xA; Function(y As JToken) _&#xD;&#xA;  y(&quot;type&quot;).Value(Of String).Equals(&quot;mobile&quot;)))]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JToken">
           <ActivityAction.Argument>
