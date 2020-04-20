@@ -49,9 +49,6 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="22_Encrypt_JSON_Data" sap:VirtualizedContainerService.HintSize="376,1590" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="encrypted" />
-      <Variable x:TypeArguments="s:Byte[]" Name="Decrypt" />
-      <Variable x:TypeArguments="x:String" Name="decryptsys" />
       <Variable x:TypeArguments="s:DateTime" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="Inputfile_path" />
       <Variable x:TypeArguments="x:String" Name="Str_Output_json_data" />
